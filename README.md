@@ -1,160 +1,156 @@
-Análisis de la pobreza en el Perú en 2022: ingresos e informalidad
+# Análisis de la pobreza en el Perú en 2022: ingresos e informalidad
 
-Descripción del proyecto
+## Descripción del proyecto
 
 Este proyecto evalúa la pobreza en los hogares peruanos durante 2022 utilizando datos de la Encuesta Nacional de Hogares (ENAHO) del Instituto Nacional de Estadística e Informática (INEI). Se analiza cómo los ingresos y la informalidad laboral influyen en la probabilidad de pobreza en diferentes regiones del país, con un enfoque en las diferencias entre áreas rurales y urbanas.
 
 Se procesaron más de 87,000 registros utilizando Python para limpiar, analizar y visualizar los datos, generando insights clave para orientar políticas públicas.
 
-Objetivo
+## Objetivo
 
 Evaluar la relación entre los ingresos, la informalidad laboral y la probabilidad de pobreza en los hogares peruanos, identificando disparidades económicas regionales y proponiendo estrategias para su mitigación.
 
-Hipótesis
+## Hipótesis
 
 Un aumento en los ingresos y la formalidad laboral disminuye significativamente la probabilidad de pobreza.
 
-Datos utilizados
+## Datos utilizados
 
-Origen:
+### Origen:
 
-Encuesta Nacional de Hogares (ENAHO) del Instituto Nacional de Estadística e Informática (INEI) de Perú.
+* Encuesta Nacional de Hogares (ENAHO) del Instituto Nacional de Estadística e Informática (INEI) de Perú.
 
-Descargar datos oficiales
+* Descargar datos oficiales: https://www.datosabiertos.gob.pe/dataset/encuesta-nacional-de-hogares-enaho-2022-instituto-nacional-de-estad%C3%ADstica-e-inform%C3%A1tica-%E2%80%93
 
-Módulos empleados:
+## Módulos empleados:
 
-Módulo de ingresos y empleo (Enaho01a-2022-500)
+* Módulo de ingresos y empleo (Enaho01a-2022-500)
 
-Módulo de educación
+El archivo principal analizado está disponible en este repositorio: 'dataPobrezaPeru2022.csv'.
 
-Módulo de salud
+## Metodología
 
-El archivo principal analizado está disponible en este repositorio: dataPobrezaPeru2022.csv.
+### Limpieza de datos
 
-Metodología
+1. Estandarización:
 
-Limpieza de datos
+* Renombrado de columnas para facilitar su interpretación.
 
-Estandarización:
+* Creación de diccionarios para mapear variables categóricas (dominio, estrato, tipo de contrato, etc.).
 
-Renombrado de columnas para facilitar su interpretación.
+2. Manejo de valores nulos:
 
-Creación de diccionarios para mapear variables categóricas (dominio, estrato, tipo de contrato, etc.).
+* Imputación de variables numéricas usando la mediana por conglomerado (nconglome).
 
-Manejo de valores nulos:
+* Imputación de variables categóricas usando la moda.
 
-Imputación de variables numéricas usando la mediana por conglomerado (nconglome).
+3. Tratamiento de valores atípicos:
 
-Imputación de variables categóricas usando la moda.
+* Eliminación de outliers utilizando el rango intercuartil (IQR).
 
-Tratamiento de valores atípicos:
+4. Eliminación de duplicados:
 
-Eliminación de outliers utilizando el rango intercuartil (IQR).
+* Remoción de registros duplicados.
 
-Eliminación de duplicados:
+## Exploración de datos (EDA)
 
-Remoción de registros duplicados.
+1. Distribución de ingresos:
 
-Exploración de datos (EDA)
+* Asimetría positiva con concentración de ingresos bajos.
 
-Distribución de ingresos:
+* Densidad de ingresos significativamente más alta en áreas rurales.
 
-Asimetría positiva con concentración de ingresos bajos.
+2. Relación entre variables:
 
-Densidad de ingresos significativamente más alta en áreas rurales.
+* Correlación negativa fuerte entre ingresos y pobreza (-0.56).
 
-Relación entre variables:
+* La formalidad laboral presenta una correlación moderada con menores probabilidades de pobreza (-0.39).
 
-Correlación negativa fuerte entre ingresos y pobreza (-0.56).
+3. Visualizaciones:
 
-La formalidad laboral presenta una correlación moderada con menores probabilidades de pobreza (-0.39).
+* Histogramas y boxplots para analizar la distribución de ingresos por dominio geográfico.
 
-Visualizaciones:
+* Gráficos de barras para examinar las tasas de pobreza en zonas urbanas y rurales.
 
-Histogramas y boxplots para analizar la distribución de ingresos por dominio geográfico.
+## Métodos estadísticos avanzados
 
-Gráficos de barras para examinar las tasas de pobreza en zonas urbanas y rurales.
+1. Regresión Logística:
 
-Métodos estadísticos avanzados
+*  Relación entre ingreso_total, es_formal y es_pobre.
 
-Regresión Logística:
+#### Resultados:
 
-Relación entre ingreso_total, es_formal y es_pobre.
+  * Aumentar ingresos reduce la probabilidad de pobreza (-0.027).
 
-Resultados:
+  * La formalidad laboral tiene un efecto protector significativo (-1.083).
 
-Aumentar ingresos reduce la probabilidad de pobreza (-0.027).
+2. Índice de Gini:
 
-La formalidad laboral tiene un efecto protector significativo (-1.083).
+* Valor: 0.45 (desigualdad moderada-alta).
 
-Índice de Gini:
-
-Valor: 0.45 (desigualdad moderada-alta).
-
-Análisis de varianza (ANOVA):
+3. Análisis de varianza (ANOVA):
 
 Diferencias significativas entre ingresos en zonas urbanas y rurales (p-value = 0.0).
 
-Resultados clave
+## Resultados clave
 
-Impacto de los ingresos:
+1. Impacto de los ingresos:
 
-Los ingresos tienen un efecto directo en la reducción de la pobreza.
+* Los ingresos tienen un efecto directo en la reducción de la pobreza.
 
-38% de los hogares rurales y 17% de los urbanos son pobres.
+* 38% de los hogares rurales y 17% de los urbanos son pobres.
 
-Formalidad laboral:
+2. Formalidad laboral:
 
-Trabajos formales están asociados con menores probabilidades de pobreza.
+* Trabajos formales están asociados con menores probabilidades de pobreza.
 
-Desigualdad económica:
+3. Desigualdad económica:
 
-El índice de Gini (0.45) refleja una concentración alta de ingresos.
+* El índice de Gini (0.45) refleja una concentración alta de ingresos.
 
-Diferencias regionales:
+4. Diferencias regionales:
 
-Las zonas rurales muestran ingresos significativamente más bajos que las urbanas.
+* Las zonas rurales muestran ingresos significativamente más bajos que las urbanas.
 
-Recomendaciones
+## Recomendaciones
 
-Promover la formalización laboral:
+1. Promover la formalización laboral:
 
-Simplificar el registro en la seguridad social.
+* Simplificar el registro en la seguridad social.
 
-Incentivar la formalización en sectores rurales clave.
+* Incentivar la formalización en sectores rurales clave.
 
-Reducir la desigualdad:
+2. Reducir la desigualdad:
 
-Diseñar programas redistributivos como transferencias condicionadas.
+* Diseñar programas redistributivos como transferencias condicionadas.
 
-Incrementar la inversión en educación y capacitación laboral.
+* Incrementar la inversión en educación y capacitación laboral.
 
-Fomentar el desarrollo rural:
+3. Fomentar el desarrollo rural:
 
-Invertir en infraestructura y conectividad para mejorar el acceso al mercado.
+* Invertir en infraestructura y conectividad para mejorar el acceso al mercado.
 
-Estimular la inversión privada en zonas rurales.
+* Estimular la inversión privada en zonas rurales.
 
-Ampliar el acceso a créditos:
+4. Ampliar el acceso a créditos:
 
-Fomentar programas de microcréditos para pequeños emprendedores.
+* Fomentar programas de microcréditos para pequeños emprendedores.
 
-Mejorar la educación:
+5. Mejorar la educación:
 
-Implementar capacitaciones laborales enfocadas en habilidades técnicas.
+* Implementar capacitaciones laborales enfocadas en habilidades técnicas.
 
-Tecnologías utilizadas
+## Tecnologías utilizadas
 
-Python: Limpieza, análisis y visualización de datos (Pandas, NumPy, Matplotlib, Seaborn).
+* Python: Limpieza, análisis y visualización de datos (Pandas, NumPy, Matplotlib, Seaborn).
 
-GitHub: Documentación y publicación del proyecto.
+* GitHub: Documentación y publicación del proyecto.
 
-Contribuciones
+### Contribuciones
 
 Las contribuciones son bienvenidas. Si deseas mejorar este proyecto, abre un pull request o contacta al autor.
 
-Autor
+### Autor
 
 Wilmer Gastón Lozano Huamán
 
