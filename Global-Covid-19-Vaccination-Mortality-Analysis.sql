@@ -1,8 +1,11 @@
 -- " Análisis de Mortalidad y Vacunación Global por COVID-19 (2020-2024)"
 
 --Puedes descargar la data para importar ambas tablas aquí:
-👉![covid_deaths](https://github.com/WLozanoH/Global-Covid-19-Vaccination-Mortality-Analysis/blob/main/CovidDeaths.zip)
-👉![covid_vaccinations](https://github.com/WLozanoH/Global-Covid-19-Vaccination-Mortality-Analysis/blob/main/CovidVaccinations.zip)
+-- covid_deaths: 
+👉https://github.com/WLozanoH/Global-Covid-19-Vaccination-Mortality-Analysis/blob/main/CovidDeaths.zip
+
+--👉 covid_vaccinations: 
+👉https://github.com/WLozanoH/Global-Covid-19-Vaccination-Mortality-Analysis/blob/main/CovidVaccinations.zip
 
 -- ELIMINAMOS LA TABLA SI EXISTE
 -- Esta instrucción elimina cualquier tabla existente con el nombre 'covid_deaths' antes de crearla.
@@ -382,10 +385,8 @@ MEXICO: 21 Enero 2022
 --Limpiamos la tabla analizada
 DROP TABLE IF EXISTS PercentagePopulationVaccinated;
 
---Links de data procesada: 
-👉![PercentagePopulationVaccinated](https://github.com/WLozanoH/Global-Covid-19-Vaccination-Mortality-Analysis/blob/main/PercentagePopulationVaccinated.zip)
+--Links de data procesada: 👉PercentagePopulationVaccinated: https://github.com/WLozanoH/Global-Covid-19-Vaccination-Mortality-Analysis/blob/main/PercentagePopulationVaccinated.zip
 
---Link de dashboard en Tableau: 
-👉![VISUALIZACIÓN DE DATOS](https://public.tableau.com/app/profile/wilmer.lozano/viz/Global-Covid-19-Vaccination-Mortality-Analysis2020-2024/Dashboard1?publish=yes)
+--Link de dashboard en Tableau: 👉VISUALIZACIÓN DE DATOS: https://public.tableau.com/app/profile/wilmer.lozano/viz/Global-Covid-19-Vaccination-Mortality-Analysis2020-2024/Dashboard1?publish=yes
 
 --that's it
